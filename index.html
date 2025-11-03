@@ -79,7 +79,7 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 8px;
+            /* Dihapus: padding: 8px; dipindahkan ke class tailwind di html */
         }
 
         /* Styling untuk tombol musik */
@@ -99,11 +99,11 @@
             position: relative;
         }
 
-        /* Ornamen sudut yang lebih mewah (SVG) */
+        /* Ornamen sudut yang lebih mewah (SVG) - SEKARANG RESPONSIF */
         .filigree-ornament {
             position: absolute;
-            width: 100px; /* Ukuran ornamen diperbesar */
-            height: 100px;
+            width: 60px; /* Ukuran mobile default */
+            height: 60px;
             background-repeat: no-repeat;
             background-size: contain;
             opacity: 0.9; /* Sedikit transparan agar tidak terlalu mencolok */
@@ -112,28 +112,52 @@
 
         /* SVG Ornamen Sudut - Versi "Santai" (Filigree) */
         .filigree-ornament.top-left {
-            top: -20px; /* Geser ke luar sedikit */
-            left: -20px;
+            top: -10px; /* Posisi mobile */
+            left: -10px;
             transform: rotate(0deg);
             background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23FFD700"/><stop offset="50%" style="stop-color:%23DAA520"/><stop offset="100%" style="stop-color:%23B8860B"/></linearGradient></defs><path fill="url(%23goldGradient)" opacity="0.8" d="M0,0 C50,0 50,0 50,50 S50,100 0,100 L0,80 C30,80 30,80 30,50 S30,20 0,20 Z"/></svg>');
         }
         .filigree-ornament.top-right {
-            top: -20px;
-            right: -20px;
+            top: -10px; /* Posisi mobile */
+            right: -10px;
             transform: rotateY(180deg); /* Balik horizontal */
             background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23FFD700"/><stop offset="50%" style="stop-color:%23DAA520"/><stop offset="100%" style="stop-color:%23B8860B"/></linearGradient></defs><path fill="url(%23goldGradient)" opacity="0.8" d="M0,0 C50,0 50,0 50,50 S50,100 0,100 L0,80 C30,80 30,80 30,50 S30,20 0,20 Z"/></svg>');
         }
         .filigree-ornament.bottom-left {
-            bottom: -20px;
-            left: -20px;
+            bottom: -10px; /* Posisi mobile */
+            left: -10px;
             transform: rotateX(180deg); /* Balik vertikal */
             background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23FFD700"/><stop offset="50%" style="stop-color:%23DAA520"/><stop offset="100%" style="stop-color:%23B8860B"/></linearGradient></defs><path fill="url(%23goldGradient)" opacity="0.8" d="M0,0 C50,0 50,0 50,50 S50,100 0,100 L0,80 C30,80 30,80 30,50 S30,20 0,20 Z"/></svg>');
         }
         .filigree-ornament.bottom-right {
-            bottom: -20px;
-            right: -20px;
+            bottom: -10px; /* Posisi mobile */
+            right: -10px;
             transform: rotate(180deg); /* Balik 180 derajat */
             background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23FFD700"/><stop offset="50%" style="stop-color:%23DAA520"/><stop offset="100%" style="stop-color:%23B8860B"/></linearGradient></defs><path fill="url(%23goldGradient)" opacity="0.8" d="M0,0 C50,0 50,0 50,50 S50,100 0,100 L0,80 C30,80 30,80 30,50 S30,20 0,20 Z"/></svg>');
+        }
+
+        /* Tambahkan media query untuk memulihkan ukuran desktop */
+        @media (min-width: 768px) { /* md: breakpoint */
+            .filigree-ornament {
+                width: 100px; /* Ukuran desktop */
+                height: 100px;
+            }
+            .filigree-ornament.top-left {
+                top: -20px; /* Posisi desktop */
+                left: -20px;
+            }
+            .filigree-ornament.top-right {
+                top: -20px; /* Posisi desktop */
+                right: -20px;
+            }
+            .filigree-ornament.bottom-left {
+                bottom: -20px; /* Posisi desktop */
+                left: -20px;
+            }
+            .filigree-ornament.bottom-right {
+                bottom: -20px; /* Posisi desktop */
+                right: -20px;
+            }
         }
 
 
@@ -202,7 +226,8 @@
 <body class="theme-bg-primary theme-text-primary overflow-x-hidden">
 
     <!-- 1. Cover / Layar Pembuka --><div id="cover" class="fixed inset-0 z-50">
-        <div class="cover-blur-overlay">
+        <!-- Ditambahkan p-4 untuk memberi padding di layar mobile agar ornamen tidak overflow -->
+        <div class="cover-blur-overlay p-4">
             <!-- Penyesuaian Padding: p-6 di mobile, p-8 di desktop -->
             <div class="relative z-10 theme-text-primary p-6 md:p-8 max-w-lg mx-auto border-2 border-amber-600/50 rounded-lg">
                 <!-- Ornamen Sudut Mewah --><div class="filigree-ornament top-left"></div>
@@ -232,9 +257,33 @@
         </div>
     </div>
 
-    <!-- 2. Konten Utama (Muncul setelah cover dibuka) --><main id="main-content" class="opacity-0 transition-opacity duration-1000">
+    <!-- 2. Konten Utama (Muncul setelah cover dibuka) -->
+    <!-- Diubah: Ditambahkan padding-bottom (pb-20) untuk memberi ruang bagi toolbar bawah di mobile -->
+    <main id="main-content" class="opacity-0 transition-opacity duration-1000 pb-20 md:pb-0">
         
-        <!-- Tombol Kontrol Musik --><button id="music-toggle" class="fixed bottom-6 right-6 z-40 w-12 h-12 rounded-full theme-bg-accent-dark text-white flex items-center justify-center shadow-lg">
+        <!-- Toolbar Navigasi Bawah (BARU) -->
+        <nav id="bottom-toolbar" class="fixed bottom-0 left-0 right-0 z-40 h-16 theme-bg-primary shadow-[0_-4px_10px_rgba(0,0,0,0.05)] flex justify-around items-center md:hidden">
+            <a href="#home" class="flex flex-col items-center justify-center text-xs theme-text-secondary hover:theme-text-gold p-2">
+                <i data-lucide="home" class="w-5 h-5"></i>
+                <span>Home</span>
+            </a>
+            <a href="#mempelai" class="flex flex-col items-center justify-center text-xs theme-text-secondary hover:theme-text-gold p-2">
+                <i data-lucide="users" class="w-5 h-5"></i>
+                <span>Mempelai</span>
+            </a>
+            <a href="#lokasi" class="flex flex-col items-center justify-center text-xs theme-text-secondary hover:theme-text-gold p-2">
+                <i data-lucide="map-pin" class="w-5 h-5"></i>
+                <span>Lokasi</span>
+            </a>
+            <a href="#ucapan" class="flex flex-col items-center justify-center text-xs theme-text-secondary hover:theme-text-gold p-2">
+                <i data-lucide="message-circle" class="w-5 h-5"></i>
+                <span>Ucapan</span>
+            </a>
+        </nav>
+        
+        <!-- Tombol Kontrol Musik -->
+        <!-- Diubah: Pindah ke atas (bottom-20) di mobile agar tidak tertutup toolbar -->
+        <button id="music-toggle" class="fixed bottom-20 right-6 z-40 w-12 h-12 rounded-full theme-bg-accent-dark text-white flex items-center justify-center shadow-lg md:bottom-6">
             <i id="music-icon" data-lucide="music-2"></i>
         </button>
         <audio id="bg-music" loop>
@@ -242,7 +291,9 @@
             Browser Anda tidak mendukung elemen audio.
         </audio>
 
-        <!-- 3. Hero Section --><header class="h-screen min-h-[600px] flex flex-col items-center justify-center text-center p-8 relative overflow-hidden">
+        <!-- 3. Hero Section -->
+        <!-- Diubah: Ditambahkan id="home" -->
+        <header id="home" class="h-screen min-h-[600px] flex flex-col items-center justify-center text-center p-8 relative overflow-hidden">
             <!-- Background Image dengan Parallax Ringan (Diganti dengan Ornamen) --><div class="absolute inset-0 bg-fixed hero-ornament-pattern z-0">
             </div>
             <div class="absolute inset-0 bg-black/20 z-10"></div> <!-- Overlay (diperbaiki z-index) --><div class="relative z-20 text-white pt-20 gold-border-container p-8">
@@ -257,7 +308,9 @@
             </div>
         </header>
 
-        <!-- 4. Info Pengantin --><section class="py-24 px-6 max-w-5xl mx-auto relative">
+        <!-- 4. Info Pengantin -->
+        <!-- Diubah: Ditambahkan id="mempelai" -->
+        <section id="mempelai" class="py-24 px-6 max-w-5xl mx-auto relative">
             <div class="floral-bg-left"></div>
             <div class="floral-bg-right"></div>
 
@@ -338,7 +391,9 @@
             </div>
         </section>
 
-        <!-- 6. Google Maps Lokasi --><section class="py-24 px-6 text-center">
+        <!-- 6. Google Maps Lokasi -->
+        <!-- Diubah: Ditambahkan id="lokasi" -->
+        <section id="lokasi" class="py-24 px-6 text-center">
             <h2 class="text-5xl font-serif mb-12 theme-text-gold" data-aos="fade-up">Lokasi Pernikahan</h2>
             <div class="gold-divider"></div>
             
@@ -376,7 +431,9 @@
             </div>
         </section>
 
-        <!-- 8. Ucapan Tamu (Guestbook) --><section class="py-24 px-6">
+        <!-- 8. Ucapan Tamu (Guestbook) -->
+        <!-- Diubah: Ditambahkan id="ucapan" -->
+        <section id="ucapan" class="py-24 px-6">
             <div class="max-w-3xl mx-auto">
                 <h2 class="text-5xl font-serif text-center mb-12 theme-text-gold" data-aos="fade-up">Buku Tamu</h2>
                 <div class="gold-divider"></div>
