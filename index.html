@@ -203,19 +203,24 @@
 
     <!-- 1. Cover / Layar Pembuka --><div id="cover" class="fixed inset-0 z-50">
         <div class="cover-blur-overlay">
-            <div class="relative z-10 theme-text-primary p-8 max-w-lg mx-auto border-2 border-amber-600/50 rounded-lg">
+            <!-- Penyesuaian Padding: p-6 di mobile, p-8 di desktop -->
+            <div class="relative z-10 theme-text-primary p-6 md:p-8 max-w-lg mx-auto border-2 border-amber-600/50 rounded-lg">
                 <!-- Ornamen Sudut Mewah --><div class="filigree-ornament top-left"></div>
                 <div class="filigree-ornament top-right"></div>
                 <div class="filigree-ornament bottom-left"></div>
                 <div class="filigree-ornament bottom-right"></div>
 
-                <p class="font-serif text-lg md:text-xl" data-aos="fade-up" data-aos-delay="100">Undangan Pernikahan</p>
-                <h1 class="font-serif text-6xl md:text-8xl my-4 theme-text-gold" data-aos="fade-up" data-aos-delay="300">Z&R</h1>
-                <p class="font-serif text-lg md:text-xl" data-aos="fade-up" data-aos-delay="500">21 Desember 2025</p>
+                <!-- Penyesuaian Font: text-base di mobile, sm:text-lg, md:text-xl -->
+                <p class="font-serif text-base sm:text-lg md:text-xl" data-aos="fade-up" data-aos-delay="100">Undangan Pernikahan</p>
+                <!-- Penyesuaian Font: text-5xl di mobile, sm:text-6xl, md:text-8xl -->
+                <h1 class="font-serif text-5xl sm:text-6xl md:text-8xl my-4 theme-text-gold" data-aos="fade-up" data-aos-delay="300">Z&R</h1>
+                <p class="font-serif text-base sm:text-lg md:text-xl" data-aos="fade-up" data-aos-delay="500">21 Desember 2025</p>
                 
                 <div class="mt-12" data-aos="fade-up" data-aos-delay="700">
-                    <p class="text-lg">Kepada Yth.</p>
-                    <p class="text-2xl font-bold my-2">Tamu Undangan</p>
+                    <!-- Penyesuaian Font: text-base di mobile, sm:text-lg -->
+                    <p class="text-base sm:text-lg">Kepada Yth.</p>
+                    <!-- Penambahan ID untuk nama tamu dinamis -->
+                    <p id="guest-name" class="text-2xl font-bold my-2">Tamu Undangan</p>
                     <p class="text-sm">(Mohon maaf tidak dapat menyebutkan satu per satu)</p>
                 </div>
 
@@ -479,7 +484,21 @@
         const bgMusic = document.getElementById('bg-music');
         const musicToggle = document.getElementById('music-toggle');
         const musicIcon = document.getElementById('music-icon');
+        const guestNameElement = document.getElementById('guest-name'); // Ditambahkan
         let isPlaying = false;
+
+        // --- Logika Nama Tamu (Variability) ---
+        try {
+            const urlParams = new URLSearchParams(window.location.search);
+            const toGuest = urlParams.get('to');
+            if (toGuest && toGuest.trim() !== '') {
+                // Bersihkan nama tamu untuk keamanan dasar
+                guestNameElement.innerText = toGuest.replace(/<[^>]+>/g, '');
+            }
+        } catch (e) {
+            console.warn("Gagal membaca nama tamu dari URL.", e);
+        }
+        // --- Akhir Logika Nama Tamu ---
 
         openButton.addEventListener('click', async () => { 
             cover.classList.add('hidden');
