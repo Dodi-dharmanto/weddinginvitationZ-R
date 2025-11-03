@@ -79,7 +79,7 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            /* Dihapus: padding: 8px; dipindahkan ke class tailwind di html */
+            /* Dihapus: padding: 8px; (dipindahkan dari sini, p-4 juga dihapus dari HTML) */
         }
 
         /* Styling untuk tombol musik */
@@ -112,26 +112,26 @@
 
         /* SVG Ornamen Sudut - Versi "Santai" (Filigree) */
         .filigree-ornament.top-left {
-            top: -10px; /* Posisi mobile */
-            left: -10px;
+            top: 1rem; /* Posisi mobile (di dalam padding) */
+            left: 1rem;
             transform: rotate(0deg);
             background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23FFD700"/><stop offset="50%" style="stop-color:%23DAA520"/><stop offset="100%" style="stop-color:%23B8860B"/></linearGradient></defs><path fill="url(%23goldGradient)" opacity="0.8" d="M0,0 C50,0 50,0 50,50 S50,100 0,100 L0,80 C30,80 30,80 30,50 S30,20 0,20 Z"/></svg>');
         }
         .filigree-ornament.top-right {
-            top: -10px; /* Posisi mobile */
-            right: -10px;
+            top: 1rem; /* Posisi mobile (di dalam padding) */
+            right: 1rem;
             transform: rotateY(180deg); /* Balik horizontal */
             background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23FFD700"/><stop offset="50%" style="stop-color:%23DAA520"/><stop offset="100%" style="stop-color:%23B8860B"/></linearGradient></defs><path fill="url(%23goldGradient)" opacity="0.8" d="M0,0 C50,0 50,0 50,50 S50,100 0,100 L0,80 C30,80 30,80 30,50 S30,20 0,20 Z"/></svg>');
         }
         .filigree-ornament.bottom-left {
-            bottom: -10px; /* Posisi mobile */
-            left: -10px;
+            bottom: 1rem; /* Posisi mobile (di dalam padding) */
+            left: 1rem;
             transform: rotateX(180deg); /* Balik vertikal */
             background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23FFD700"/><stop offset="50%" style="stop-color:%23DAA520"/><stop offset="100%" style="stop-color:%23B8860B"/></linearGradient></defs><path fill="url(%23goldGradient)" opacity="0.8" d="M0,0 C50,0 50,0 50,50 S50,100 0,100 L0,80 C30,80 30,80 30,50 S30,20 0,20 Z"/></svg>');
         }
         .filigree-ornament.bottom-right {
-            bottom: -10px; /* Posisi mobile */
-            right: -10px;
+            bottom: 1rem; /* Posisi mobile (di dalam padding) */
+            right: 1rem;
             transform: rotate(180deg); /* Balik 180 derajat */
             background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23FFD700"/><stop offset="50%" style="stop-color:%23DAA520"/><stop offset="100%" style="stop-color:%23B8860B"/></linearGradient></defs><path fill="url(%23goldGradient)" opacity="0.8" d="M0,0 C50,0 50,0 50,50 S50,100 0,100 L0,80 C30,80 30,80 30,50 S30,20 0,20 Z"/></svg>');
         }
@@ -226,10 +226,10 @@
 <body class="theme-bg-primary theme-text-primary overflow-x-hidden">
 
     <!-- 1. Cover / Layar Pembuka --><div id="cover" class="fixed inset-0 z-50">
-        <!-- Ditambahkan p-4 untuk memberi padding di layar mobile agar ornamen tidak overflow -->
-        <div class="cover-blur-overlay p-4">
-            <!-- Penyesuaian Padding: p-6 di mobile, p-8 di desktop -->
-            <div class="relative z-10 theme-text-primary p-6 md:p-8 max-w-lg mx-auto border-2 border-amber-600/50 rounded-lg">
+        <!-- Dihapus: p-4 agar full-width di mobile -->
+        <div class="cover-blur-overlay">
+            <!-- Penyesuaian: Dibuat full-width di mobile, dan tetap jadi 'box' di desktop (md:) -->
+            <div class="relative z-10 theme-text-primary p-6 md:p-8 md:max-w-lg md:mx-auto md:border-2 md:border-amber-600/50 md:rounded-lg">
                 <!-- Ornamen Sudut Mewah --><div class="filigree-ornament top-left"></div>
                 <div class="filigree-ornament top-right"></div>
                 <div class="filigree-ornament bottom-left"></div>
