@@ -237,15 +237,15 @@
 
                 <!-- Penyesuaian Font: text-base di mobile, sm:text-lg, md:text-xl -->
                 <p class="font-serif text-base sm:text-lg md:text-xl" data-aos="fade-up" data-aos-delay="100">Undangan Pernikahan</p>
-                <!-- Penyesuaian Font: text-5xl di mobile, sm:text-6xl, md:text-8xl -->
-                <h1 class="font-serif text-5xl sm:text-6xl md:text-8xl my-4 theme-text-gold" data-aos="fade-up" data-aos-delay="300">Z&R</h1>
+                <!-- Penyesuaian Font: text-4xl (base mobile) -> sm:text-5xl -> md:text-8xl -->
+                <h1 class="font-serif text-4xl sm:text-5xl md:text-8xl my-4 theme-text-gold" data-aos="fade-up" data-aos-delay="300">Z&R</h1>
                 <p class="font-serif text-base sm:text-lg md:text-xl" data-aos="fade-up" data-aos-delay="500">21 Desember 2025</p>
                 
                 <div class="mt-12" data-aos="fade-up" data-aos-delay="700">
                     <!-- Penyesuaian Font: text-base di mobile, sm:text-lg -->
                     <p class="text-base sm:text-lg">Kepada Yth.</p>
-                    <!-- Penambahan ID untuk nama tamu dinamis -->
-                    <p id="guest-name" class="text-2xl font-bold my-2">Tamu Undangan</p>
+                    <!-- Penyesuaian Font: text-xl (base mobile) -> sm:text-2xl -->
+                    <p id="guest-name" class="text-xl sm:text-2xl font-bold my-2">Tamu Undangan</p>
                     <p class="text-sm">(Mohon maaf tidak dapat menyebutkan satu per satu)</p>
                 </div>
 
@@ -293,7 +293,8 @@
 
         <!-- 3. Hero Section -->
         <!-- Diubah: Ditambahkan id="home" -->
-        <header id="home" class="h-screen min-h-[600px] flex flex-col items-center justify-center text-center p-8 relative overflow-hidden">
+        <!-- Diubah: Padding disamakan (p-6 di mobile, md:p-8 di desktop) -->
+        <header id="home" class="h-screen min-h-[600px] flex flex-col items-center justify-center text-center p-6 md:p-8 relative overflow-hidden">
             <!-- Background Image dengan Parallax Ringan (Diganti dengan Ornamen) --><div class="absolute inset-0 bg-fixed hero-ornament-pattern z-0">
             </div>
             <div class="absolute inset-0 bg-black/20 z-10"></div> <!-- Overlay (diperbaiki z-index) --><div class="relative z-20 text-white pt-20 gold-border-container p-8">
@@ -302,9 +303,12 @@
                 <div class="gold-corner-ornament bottom-left"></div>
                 <div class="gold-corner-ornament bottom-right"></div>
 
-                <p class="text-xl md:text-2xl font-serif" data-aos="fade-up">The Wedding Of</p>
-                <h1 class="text-7xl md:text-9xl font-serif my-4 theme-text-gold" data-aos="fade-up" data-aos-delay="200">Zeldi & Ria</h1>
-                <p class="text-xl md:text-2xl font-serif" data-aos="fade-up" data-aos-delay="400">21 . 12 . 2025</p>
+                <!-- Penyesuaian Font: text-lg (base mobile) -> sm:text-xl -> md:text-2xl -->
+                <p class="text-lg sm:text-xl md:text-2xl font-serif" data-aos="fade-up">The Wedding Of</p>
+                <!-- Penyesuaian Font: text-6xl (base mobile) -> sm:text-7xl -> md:text-9xl -->
+                <h1 class="text-6xl sm:text-7xl md:text-9xl font-serif my-4 theme-text-gold" data-aos="fade-up" data-aos-delay="200">Zeldi & Ria</h1>
+                <!-- Penyesuaian Font: text-lg (base mobile) -> sm:text-xl -> md:text-2xl -->
+                <p class="text-lg sm:text-xl md:text-2xl font-serif" data-aos="fade-up" data-aos-delay="400">21 . 12 . 2025</p>
             </div>
         </header>
 
@@ -316,7 +320,8 @@
 
             <div class="text-center" data-aos="fade-up">
                 <p class="text-lg theme-text-secondary">Assalamu'alaikum Warahmatullahi Wabarakatuh</p>
-                <h2 class="text-5xl font-serif my-4 theme-text-gold">Kami Menikah</h2>
+                <!-- Penyesuaian Font: text-4xl (base mobile) -> sm:text-5xl -->
+                <h2 class="text-4xl sm:text-5xl font-serif my-4 theme-text-gold">Kami Menikah</h2>
                 <div class="gold-divider"></div>
                 <p class="max-w-2xl mx-auto text-base">
                     Maha suci Allah yang telah menciptakan makhluk-Nya berpasang-pasangan.
@@ -328,7 +333,8 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-20 text-center relative z-10">
                 <!-- Pengantin Pria --><div data-aos="fade-right" data-aos-delay="200" class="gold-border p-8 rounded-lg shadow-xl">
                     <img src="https://placehold.co/300x300/EADBC8/4E3629?text=Zeldi" alt="Zeldi Nugroho" class="w-48 h-48 rounded-full mx-auto shadow-lg object-cover border-4 border-amber-300">
-                    <h3 class="text-4xl font-serif mt-6 mb-2 theme-text-gold">Zeldi Nugroho</h3>
+                    <!-- Penyesuaian Font: text-3xl (base mobile) -> sm:text-4xl -->
+                    <h3 class="text-3xl sm:text-4xl font-serif mt-6 mb-2 theme-text-gold">Zeldi Nugroho</h3>
                     <p class="text-lg font-bold theme-text-accent">(zeldi)</p>
                     <p class="mt-4 text-base">Putra dari:</p>
                     <p class="font-semibold">Bpk. Alm. H. Drs. Muchanan Aguston</p>
@@ -339,7 +345,8 @@
                 
                 <!-- Pengantin Wanita --><div data-aos="fade-left" data-aos-delay="400" class="gold-border p-8 rounded-lg shadow-xl">
                     <img src="https://placehold.co/300x300/EADBC8/4E3629?text=Ria" alt="Fitria Adhi Yulianti" class="w-48 h-48 rounded-full mx-auto shadow-lg object-cover border-4 border-amber-300">
-                    <h3 class="text-4xl font-serif mt-6 mb-2 theme-text-gold">Fitria Adhi Yulianti</h3>
+                    <!-- Penyesuaian Font: text-3xl (base mobile) -> sm:text-4xl -->
+                    <h3 class="text-3xl sm:text-4xl font-serif mt-6 mb-2 theme-text-gold">Fitria Adhi Yulianti</h3>
                     <p class="text-lg font-bold theme-text-accent">(ria adara)</p>
                     <p class="mt-4 text-base">Putri dari:</p>
                     <p class="font-semibold">Bpk. Purnomo Edy Susanto</p>
@@ -353,7 +360,8 @@
             <div class="floral-bg-right"></div>
 
             <div class="max-w-4xl mx-auto relative z-10">
-                <h2 class="text-5xl font-serif mb-12 theme-text-gold" data-aos="fade-up">Detail Acara</h2>
+                <!-- Penyesuaian Font: text-4xl (base mobile) -> sm:text-5xl -->
+                <h2 class="text-4xl sm:text-5xl font-serif mb-12 theme-text-gold" data-aos="fade-up">Detail Acara</h2>
                 <div class="gold-divider"></div>
 
                 <!-- Countdown Timer --><div id="countdown" class="flex justify-center space-x-4 md:space-x-8 text-center my-16" data-aos="fade-up" data-aos-delay="200">
@@ -394,7 +402,8 @@
         <!-- 6. Google Maps Lokasi -->
         <!-- Diubah: Ditambahkan id="lokasi" -->
         <section id="lokasi" class="py-24 px-6 text-center">
-            <h2 class="text-5xl font-serif mb-12 theme-text-gold" data-aos="fade-up">Lokasi Pernikahan</h2>
+            <!-- Penyesuaian Font: text-4xl (base mobile) -> sm:text-5xl -->
+            <h2 class="text-4xl sm:text-5xl font-serif mb-12 theme-text-gold" data-aos="fade-up">Lokasi Pernikahan</h2>
             <div class="gold-divider"></div>
             
             <div class="max-w-4xl mx-auto rounded-lg overflow-hidden shadow-xl gold-border" data-aos="fade-up" data-aos-delay="200">
@@ -421,7 +430,8 @@
             <div class="floral-bg-left"></div>
             <div class="floral-bg-right"></div>
             <div class="max-w-2xl mx-auto text-center relative z-10" data-aos="fade-up">
-                <h3 class="text-4xl font-serif mb-4 theme-text-gold">Catatan untuk Tamu</h3>
+                <!-- Penyesuaian Font: text-3xl (base mobile) -> sm:text-4xl -->
+                <h3 class="text-3xl sm:text-4xl font-serif mb-4 theme-text-gold">Catatan untuk Tamu</h3>
                 <div class="gold-divider"></div>
                 <div class="bg-white/70 p-8 rounded-lg shadow-xl gold-border">
                     <i data-lucide="shirt" class="w-16 h-16 mx-auto theme-text-gold"></i>
@@ -435,7 +445,8 @@
         <!-- Diubah: Ditambahkan id="ucapan" -->
         <section id="ucapan" class="py-24 px-6">
             <div class="max-w-3xl mx-auto">
-                <h2 class="text-5xl font-serif text-center mb-12 theme-text-gold" data-aos="fade-up">Buku Tamu</h2>
+                <!-- Penyesuaian Font: text-4xl (base mobile) -> sm:text-5xl -->
+                <h2 class="text-4xl sm:text-5xl font-serif text-center mb-12 theme-text-gold" data-aos="fade-up">Buku Tamu</h2>
                 <div class="gold-divider"></div>
                 
                 <!-- Form Ucapan --><form id="guestbook-form" class="bg-white/80 p-8 rounded-lg shadow-lg gold-border" data-aos="fade-up" data-aos-delay="200">
@@ -470,7 +481,8 @@
             <div class="floral-bg-left"></div>
             <div class="floral-bg-right"></div>
             <div class="max-w-3xl mx-auto relative z-10">
-                <h2 class="text-5xl font-serif text-center mb-12 theme-text-gold" data-aos="fade-up">Konfirmasi Kehadiran</h2>
+                <!-- Penyesuaian Font: text-4xl (base mobile) -> sm:text-5xl -->
+                <h2 class="text-4xl sm:text-5xl font-serif text-center mb-12 theme-text-gold" data-aos="fade-up">Konfirmasi Kehadiran</h2>
                 <div class="gold-divider"></div>
                 
                 <form id="rsvp-form" class="bg-white/80 p-8 rounded-lg shadow-lg gold-border" data-aos="fade-up" data-aos-delay="200">
